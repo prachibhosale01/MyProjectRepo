@@ -15,12 +15,16 @@ import pageObjects.AccountPage;
 import pageObjects.LeadPage;
 import pageObjects.LoginPage;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class Steps extends BaseClass
 {
 
 	AccountPage accountPage = new AccountPage(driver);
 	LeadPage leadPage = new LeadPage(driver);
+	Logger log = LogManager.getLogger(BaseClass.class);
 	
 			@Given("User launch the chrome browser")
 			public void user_launch_the_chrome_browser() 
@@ -37,7 +41,7 @@ public class Steps extends BaseClass
 			@When("user opens the url {string}")
 			public void user_opens_the_url(String url) 
 			{
-				
+				log.info("-----Opening URL--------");
 			    driver.get(url);
 			   driver.manage().window().maximize();
 			}
@@ -45,7 +49,7 @@ public class Steps extends BaseClass
 			@And("user enters the username as {string} and password as {string}")
 			public void user_enters_the_username_as_and_password_as(String username, String password) 
 			{
-				
+				log.info("----Adding cred details");
 				loginPage.setUsername(username);
 				loginPage.setPassword(password);
 			}
