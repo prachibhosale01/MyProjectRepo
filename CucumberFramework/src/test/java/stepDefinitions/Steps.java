@@ -1,6 +1,10 @@
 package stepDefinitions;
 
-import org.junit.Assert;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.And;
@@ -15,26 +19,25 @@ import pageObjects.LoginPage;
 public class Steps extends BaseClass
 {
 
-			
-			
-			AccountPage accountPage = new AccountPage(driver);
-			LeadPage leadPage = new LeadPage(driver);
-			
-			
-
+	AccountPage accountPage = new AccountPage(driver);
+	LeadPage leadPage = new LeadPage(driver);
+	
 			@Given("User launch the chrome browser")
 			public void user_launch_the_chrome_browser() 
 			{
-			   System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers/chromedriver.exe");
-			   driver=new ChromeDriver();
-			   loginPage=new LoginPage(driver);
-			   accountPage=new AccountPage(driver);
-			   leadPage= new LeadPage(driver);
+				  
+				 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers/chromedriver.exe");
+				   driver=new ChromeDriver();
+				   loginPage=new LoginPage(driver);
+				   accountPage=new AccountPage(driver);
+				   leadPage= new LeadPage(driver);
+			   
 			}
 
 			@When("user opens the url {string}")
 			public void user_opens_the_url(String url) 
 			{
+				
 			    driver.get(url);
 			   driver.manage().window().maximize();
 			}
@@ -42,6 +45,7 @@ public class Steps extends BaseClass
 			@And("user enters the username as {string} and password as {string}")
 			public void user_enters_the_username_as_and_password_as(String username, String password) 
 			{
+				
 				loginPage.setUsername(username);
 				loginPage.setPassword(password);
 			}
@@ -49,6 +53,7 @@ public class Steps extends BaseClass
 			@And("user click on the login button")
 			public void user_click_on_the_login_button() 
 			{
+				
 				loginPage.clickLogin();
 			}
 
@@ -57,7 +62,7 @@ public class Steps extends BaseClass
 			{
 				 
 			}
-			
+//---------------------------------Account Creation-----------------------			
 			@Then("on the home user clicks on {string}")
 			public void on_the_home_user_clicks_on(String string) throws InterruptedException 
 			{
@@ -150,7 +155,7 @@ public class Steps extends BaseClass
 			}
 
 			@Then("user will click on {string} button")
-			public void user_will_click_on_button(String string) 
+			public void user_will_click_on_button(String string) throws InterruptedException 
 			{
 				leadPage.selectNext();
 			}

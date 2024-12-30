@@ -38,8 +38,8 @@ public class AccountPage
 	
 	public void searchForAccount() throws InterruptedException 
     {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(searchAccount).sendKeys("Accounts");
-		Thread.sleep(2000);
     }
 	
 	

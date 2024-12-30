@@ -1,4 +1,4 @@
-Feature:  Object record creation
+Feature:  Object creation
 
 Scenario: Account record creation
 
