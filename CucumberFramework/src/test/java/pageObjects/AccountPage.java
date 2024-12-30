@@ -10,10 +10,6 @@ public class AccountPage
 
 	public WebDriver driver;
 	
-	
-	
-	
-	
 	public AccountPage(WebDriver driver) 
 	{
         this.driver = driver;
@@ -65,7 +61,7 @@ public class AccountPage
 		
 	}
 	public void next() throws InterruptedException
-	{
+	{Thread.sleep(2000);
 		driver.findElement(nextButton).click();
 		
 		

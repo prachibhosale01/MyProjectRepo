@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.AccountPage;
+import pageObjects.LeadPage;
 import pageObjects.LoginPage;
 
 
@@ -17,6 +18,7 @@ public class Steps extends BaseClass
 			
 			
 			AccountPage accountPage = new AccountPage(driver);
+			LeadPage leadPage = new LeadPage(driver);
 			
 			
 
@@ -27,6 +29,7 @@ public class Steps extends BaseClass
 			   driver=new ChromeDriver();
 			   loginPage=new LoginPage(driver);
 			   accountPage=new AccountPage(driver);
+			   leadPage= new LeadPage(driver);
 			}
 
 			@When("user opens the url {string}")
@@ -109,8 +112,66 @@ public class Steps extends BaseClass
 			{
 				accountPage.clickOnSave();
 			}
+//------------------Lead Creation-------------------------------------------------------------------
+			@Then("on the home page user clicks on the {string}")
+			public void on_the_home_page_user_clicks_on_the(String string) throws InterruptedException 
+			{
+			  leadPage.clickOnApplauncher();
+			}
+
+			@Then("search for the {string} object")
+			public void search_for_the_object(String string) throws InterruptedException 
+			{
+			    leadPage.searchForLead();
+			}
+
+			@Then("now user will select the {string} object from the list")
+			public void now_user_will_select_the_object_from_the_list(String string) throws InterruptedException 
+			{
+				leadPage.selectForLead();
+			}
+
+			@Then("user will navigate to the leads page")
+			public void user_will_navigate_to_the_leads_page()
+			{
+			 
+			}
+
+			@When("user click on {string} button")
+			public void user_click_on_button(String string) throws InterruptedException 
+			{
+				leadPage.newLeadButton();
+			}
+
+			@Then("new window will open and select the radiobutton")
+			public void new_window_will_open_and_select_the_radiobutton() 
+			{
+			 
+			}
+
+			@Then("user will click on {string} button")
+			public void user_will_click_on_button(String string) 
+			{
+				leadPage.selectNext();
+			}
+
+			@Then("enter the value in lastname field as {string}")
+			public void enter_the_value_in_lastname_field_as(String string) 
+			{
+			   leadPage.addLastName();
+			}
+
+		
+
+			@Then("user need click on {string} button")
+			public void user_need_click_on_button(String string)
+			{
+				leadPage.clickOnSave();
+			}
 
 
+
+			
 
 
 
