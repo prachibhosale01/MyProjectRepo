@@ -36,6 +36,13 @@ public class LoginPage
 		WebElement loginButton;
 		
 		
+		public String getPageTitle()
+		{
+			return driver.getTitle();
+		
+		}
+	
+		
 		public void setUsername(String username) 
 	    {
 			usernameField.sendKeys(username);
@@ -51,6 +58,11 @@ public class LoginPage
 		        loginButton.click();
 		    }
 		    
+		   public void salesforceHomePage() 
+			{
+			 
+			   
+			}
 		
 		
 	}

@@ -3,24 +3,21 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import java.util.List;
 
 public class AccountPage 
 {
 
 	public WebDriver driver;
-	private WebDriverWait wait;
 	
 	
 	
 	
-	public AccountPage(WebDriver driver) {
+	
+	public AccountPage(WebDriver driver) 
+	{
         this.driver = driver;
-        // Initialize WebDriverWait with Duration
-       
-        PageFactory.initElements(driver, this);
+      PageFactory.initElements(driver, this);
     }
 	
 	By appLauncher = By.xpath("//button[@title='App Launcher']");
@@ -32,8 +29,10 @@ public class AccountPage
 	By lastName = By.xpath("//input[@class='slds-input' and @name='Name']");
 	By saveButton = By.xpath("//button[text()='Save']");
 	
-			
 	
+	
+	
+		
 	public void clickOnApplauncher() throws InterruptedException
     {
 		driver.findElement(appLauncher).click();

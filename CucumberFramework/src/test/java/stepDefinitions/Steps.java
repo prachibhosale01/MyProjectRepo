@@ -1,6 +1,6 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
+import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.And;
@@ -11,11 +11,10 @@ import pageObjects.AccountPage;
 import pageObjects.LoginPage;
 
 
-public class LoginStep
+public class Steps extends BaseClass
 {
 
-			public WebDriver driver;
-			public LoginPage loginPage;
+			
 			
 			AccountPage accountPage = new AccountPage(driver);
 			
@@ -53,7 +52,7 @@ public class LoginStep
 			@Then("user navigates to the salesforce home page")
 			public void user_navigates_to_the_salesforce_home_page() 
 			{
-			   
+				 
 			}
 			
 			@Then("on the home user clicks on {string}")
